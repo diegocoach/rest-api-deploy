@@ -1,0 +1,32 @@
+### recuperar todas las peliculas 
+GET http://localhost:1234/movies
+
+### recuperar una pelicula por id
+GET http://localhost:1234/movies/241bf55d-b649-4109-af7c-0e6890ded3fc
+
+### recuperar todas las peliculas por un genero
+GET http://localhost:1234/movies?genre=action
+
+###
+POST   http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "sql": "SELECT * FROM users",
+  "title": "Forrest Gump 2",
+  "year": 1997,
+  "director": "Robert Zemeckis",
+  "duration": 142,
+  "poster": "https://i.ebayimg.com/images/g/qR8AAOSwkvRZzuMD/s-l1600.jpg",
+  "genre": ["Drama", "Crime"]
+}
+
+### Actualizar una pelicula: la id no la puedo modificar porque ese parametro no lo estamos validando.
+PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+  "year": 1999,
+  "title": "Nuevo titulo"
+  
+}
